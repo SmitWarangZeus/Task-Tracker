@@ -20,7 +20,7 @@ button{
 .task-form{
     display: flex;
     justify-content:space-evenly;
-    width: 500px;
+    flex-direction: column;
 }
 
 #addTask{
