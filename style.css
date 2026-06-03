@@ -1,53 +1,9 @@
+*{
+    margin: 5px;
+    margin-bottom: 5%;
+}
 body{
-    background-color:#eee;
-}
-
-h1{
-    text-align: center;
-}
-
-button{
-    padding: 5px;
-    border-color: #666;
-}
-
-.container{
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.task-form{
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction: column;
-}
-
-#addTask{
-    background:rgb(0, 166, 255);
-}
-
-table{
-    background: #000;
-    min-width: 300px;
-    width: 60%;
-}
-
-td{
-    width:100px;
-    text-align: center;
-    background-color:rgb(228, 248, 255);
-    padding: 5px;
-}
-
-.del-btn{
-    background:rgb(253, 66, 28);
-}
-
-.btn-com{
-    background:rgb(114, 253, 114);
-}
-
-.btn-incom{
-    background:rgb(255, 177, 75);
 }

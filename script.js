@@ -1,6 +1,5 @@
 // localStorage.removeItem('tasks');
 let tasks=JSON.parse(localStorage.getItem('tasks'))||[];
-let newId=0;
 
 function addTask(){
     let taskName=document.getElementById('task-name');
@@ -18,8 +17,7 @@ function addTask(){
         alert('Past dates not allowed');
         return;
     }
-    let task={name:taskName.value,desc:taskDesc.value,status:'Incomplete',dueDate:taskDue.value,taskId:newId};
-    newId++;
+    let task={name:taskName.value,desc:taskDesc.value,status:'Incomplete',dueDate:taskDue.value,taskId:Date.now()};
     tasks.push(task);
     taskName.value='';
     taskDesc.value='';
@@ -34,7 +32,7 @@ function displayTasks(){
     tasks.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate));
     tasks.forEach((task,index)=>{
         let row=document.createElement('tr');
-        let btnclass=task.status==='Complete'?'btn-com':'btn-incom'
+        let btnclass=task.status==='Complete'?'btn-success':'btn-warning'
 
         let nameCell=document.createElement('td');
         nameCell.textContent=task.name;
@@ -53,6 +51,7 @@ function displayTasks(){
         toggleBtn.textContent=task.status;
         toggleBtn.onclick=()=>toggle(task.taskId);
         toggleBtn.classList.add(btnclass);
+        toggleBtn.classList.add('btn');
         toggleCell.appendChild(toggleBtn);
         row.appendChild(toggleCell);
 
@@ -60,27 +59,13 @@ function displayTasks(){
         let deleteBtn=document.createElement('button');
         deleteBtn.textContent='Delete';
         deleteBtn.onclick=()=>deleteTask(task.taskId);
-        deleteBtn.classList.add('del-btn');
+        deleteBtn.classList.add('btn');
+        deleteBtn.classList.add('btn-danger');
         deleteCell.appendChild(deleteBtn);
         row.appendChild(deleteCell);
 
         tbody.appendChild(row);
     })
-
-
-    // tbody.innerHTML=''
-    // tasks.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate));
-    // tasks.forEach((task,index)=>{
-    //     let btnclass=task.status==='Complete'?'btn-com':'btn-incom'
-    //     tbody.innerHTML+=`
-    //     <tr>
-    //         <td>${task.name}</td>
-    //         <td>${task.desc}</td>
-    //         <td>${task.dueDate}</td>
-    //         <td><button class=${btnclass} onClick='toggle(${task.taskId})'>${task.status}</button></td>
-    //         <td><button class='del-btn' onClick='deleteTask(${task.taskId})'>Delete</button></td>
-    //     </tr>`
-    // });
 }
 
 function deleteTask(id){
