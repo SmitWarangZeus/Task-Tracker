@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task Tracker</h1>
+    <div class="container">
+        <div class="task-form" id="task-form">
+            <input type="text" id="task-name" placeholder="Enter task name">
+            <input type="text" id="task-desc" placeholder="Enter description of task">
+            <input type="date" id="task-due">
+            <button id="addTask" onclick="addTask()">Add Task</button>
+        </div>
+        <h3>Tasks:</h3>
+        <table id="table">
+            <thead>
+                <tr>
+                    <td>Task Name</td>
+                    <td>Task Desc</td>
+                    <td>Due Date</td>
+                    <td>Status</td>
+                    <td>Delete Task</td>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
