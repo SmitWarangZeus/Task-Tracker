@@ -28,7 +28,6 @@ function addTask(){
 }
 
 function displayTasks(){
-    console.log(document.getElementById('task-due').value);
     let tbody=document.getElementById('table-body');
     tbody.innerHTML=''
     tasks.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate));
@@ -46,9 +45,10 @@ function displayTasks(){
 }
 
 function deleteTask(id){
+    console.log(tasks,id);
     tasks.forEach((task,index)=>{
         if (task.taskId===id){
-            tasks.pop(index);
+            tasks.splice(index,1);
         }
     });
     localStorage.setItem('tasks',JSON.stringify(tasks));
