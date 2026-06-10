@@ -1,0 +1,36 @@
+Task: Create a Simple Task Tracker
+Build a very simple Task Tracker application using any technology of your choice.
+You may use:
+    HTML, CSS, JavaScript
+    React
+    Angular
+    .NET Core Web API
+    Node.js
+    Python
+    Java
+    Any other technology you are comfortable with
+Minimum Features Required
+Your application should allow the user to:
+    Add a task
+    View the list of tasks
+    Mark a task as completed
+    Delete a task
+Data Storage
+You can use any one of the following:
+    Browser local storage
+    In-memory list
+    JSON file
+    MySQL database
+    Any other simple storage option
+For Day 1, using local storage or in-memory storage is completely acceptable.
+Expected Output
+By the end of the day, each trainee should submit:
+    Source code
+    Screenshot or short screen recording of the working application
+    A short README file explaining:
+        What you built
+        Which technology you used
+        How to run the application
+        What features are completed
+        What challenges you faced
+        What you would improve next
