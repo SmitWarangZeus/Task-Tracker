@@ -7,15 +7,15 @@
 <body>
     <h1>Task Tracker</h1>
     <div class="container1" style="width: 70%;">
-        <div class="form-floating" id="task-form">
+        <div class="form-floating">
             <input class="form-control" type="text" id="task-name" placeholder="Enter task name">
             <label for="task-name">Task name:</label>
         </div>
-        <div class="form-floating" id="task-form">
+        <div class="form-floating">
             <input class="form-control" type="text" id="task-desc" placeholder="Enter description of task">
             <label for="task-desc">Task description:</label>
         </div>
-        <div class="form-floating" id="task-form">
+        <div class="form-floating">
             <input class="form-control" type="date" id="task-due">
             <label for="task-due">Due date:</label>
         </div>
@@ -24,11 +24,11 @@
         <table id="table" class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <td>Task Name</td>
-                    <td>Task Desc</td>
-                    <td>Due Date</td>
-                    <td>Status</td>
-                    <td>Delete Task</td>
+                    <th>Task Name</th>
+                    <th>Task Desc</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Delete Task</th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>

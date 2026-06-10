@@ -21,7 +21,7 @@ function addTask(){
     tasks.push(task);
     taskName.value='';
     taskDesc.value='';
-    task.dueDate.value='';
+    taskDue.value='';
     localStorage.setItem('tasks',JSON.stringify(tasks));
     displayTasks();
 }
@@ -69,11 +69,7 @@ function displayTasks(){
 }
 
 function deleteTask(id){
-    tasks.forEach((task,index)=>{
-        if (task.taskId===id){
-            tasks.splice(index,1);
-        }
-    });
+    tasks.filter(task => task.taskId!==id);
     localStorage.setItem('tasks',JSON.stringify(tasks));
     displayTasks();
 }
