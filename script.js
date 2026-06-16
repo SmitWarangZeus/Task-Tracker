@@ -1,4 +1,7 @@
-// localStorage.removeItem('tasks');
+const STORAGE_KEY='tasks';
+const COMPLETE='Complete';
+const INCOMPLETE='Incomplete';
+
 let tasks=JSON.parse(localStorage.getItem('tasks'))||[];
 
 function addTask(){
@@ -17,7 +20,7 @@ function addTask(){
         alert('Past dates not allowed');
         return;
     }
-    let task={name:taskName.value,desc:taskDesc.value,status:'Incomplete',dueDate:taskDue.value,taskId:Date.now()};
+    let task={name:taskName.value,desc:taskDesc.value,status:INCOMPLETE,dueDate:taskDue.value,taskId:Date.now()};
     tasks.push(task);
     taskName.value='';
     taskDesc.value='';
@@ -32,7 +35,7 @@ function displayTasks(){
     tasks.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate));
     tasks.forEach((task,index)=>{
         let row=document.createElement('tr');
-        let btnclass=task.status==='Complete'?'btn-success':'btn-warning'
+        let btnclass=task.status===COMPLETE?'btn-success':'btn-warning'
 
         let nameCell=document.createElement('td');
         nameCell.textContent=task.name;
@@ -69,7 +72,7 @@ function displayTasks(){
 }
 
 function deleteTask(id){
-    tasks.filter(task => task.taskId!==id);
+    tasks=tasks.filter(task => task.taskId!=id);
     localStorage.setItem('tasks',JSON.stringify(tasks));
     displayTasks();
 }
@@ -77,7 +80,7 @@ function deleteTask(id){
 function toggle(id){
     tasks.forEach((task)=>{
         if (task.taskId===id){
-            task.status=task.status==='Complete'?'Incomplete':'Complete';
+            task.status=task.status===COMPLETE?INCOMPLETE:COMPLETE;
         }
     });
     localStorage.setItem('tasks',JSON.stringify(tasks));

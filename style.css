@@ -7,3 +7,10 @@ body{
     align-items: center;
     flex-direction: column;
 }
+.container1{
+    width: 70%;
+}
+#addTask{
+    margin-left: 5px;
+    margin-bottom: 5%;
+}
